@@ -1,7 +1,7 @@
 /* 
  * This file is part of the ROCKETuC Processing Library project
  *
- * Copyright (C) 2012 Stefan Wendler <sw@kaltpost.de>
+ * Copyright (C) 2012 Stefan Wendler <swROCKETuC.LOWkaltpost.de>
  *
  * The ROCKETuC Processing Library is free software; you can redistribute 
  * it and/or modify it under the terms of the GNU Lesser General Public
@@ -35,24 +35,26 @@ import rocketuc.processing.*;
 // our instance of the ROCKETuC API
 ROCKETuC r;
 
-static final int b[]=
-{
-  @,@,
-  @,@,
-  @,@
-}
-static final int c[]=
-{
-  @,@,
-  @,@,
-  @,@
-}
 
 /**
  * setup function called by processing on startup
  */
 void setup() {  
+  
   try {
+   char     [] B =
+{
+  ROCKETuC.HIGH,ROCKETuC.LOW,
+  ROCKETuC.HIGH,ROCKETuC.LOW,
+  ROCKETuC.LOW,ROCKETuC.LOW
+};
+   char[] C=
+{
+  ROCKETuC.HIGH,ROCKETuC.HIGH,
+  ROCKETuC.LOW,ROCKETuC.LOW,
+  ROCKETuC.LOW,ROCKETuC.LOW
+};
+
     // connect to MCU
     r = new ROCKETuC(this, "/dev/ttyACM0");
     
