@@ -22,7 +22,7 @@
 /**
  * This example shows:
  *PIN_1_0-o o-PIN_1_3
- *PIN_1_1-o o-PIN_1_4
+ *PIN_1_4-o o-PIN_1_4
  *PIN_1_2-o o-PIN_1_5
  *
  * how to connect to a MCU through a serial line
@@ -35,6 +35,19 @@ import rocketuc.processing.*;
 // our instance of the ROCKETuC API
 ROCKETuC r;
 
+final char[] B =
+{
+  ROCKETuC.HIGH,ROCKETuC.LOW,
+  ROCKETuC.HIGH,ROCKETuC.LOW,
+  ROCKETuC.LOW,ROCKETuC.LOW
+};
+
+final char[] C=
+{
+  ROCKETuC.HIGH,ROCKETuC.HIGH,
+  ROCKETuC.LOW,ROCKETuC.LOW,
+  ROCKETuC.LOW,ROCKETuC.LOW
+};
 
 /**
  * setup function called by processing on startup
@@ -42,33 +55,17 @@ ROCKETuC r;
 void setup() {  
   
   try {
-   char     [] B =
-{
-  ROCKETuC.HIGH,ROCKETuC.LOW,
-  ROCKETuC.HIGH,ROCKETuC.LOW,
-  ROCKETuC.LOW,ROCKETuC.LOW
-};
-   char[] C=
-{
-  ROCKETuC.HIGH,ROCKETuC.HIGH,
-  ROCKETuC.LOW,ROCKETuC.LOW,
-  ROCKETuC.LOW,ROCKETuC.LOW
-};
+
 
     // connect to MCU
     r = new ROCKETuC(this, "/dev/ttyACM0");
     
     // configure p1.0 (build in LED) as digital output, initially set HIGH
-    print("Set P1.0 to OUTPUT/HIGH: ");
-    r.pinMode(ROCKETuC.PIN_1_0, ROCKETuC.OUTPUT);
-    r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.HIGH);
+    print("Set  to OUTPUT/HIGH: ");
+    r.pinMode(ROCKETuC.PIN_1_4, ROCKETuC.OUTPUT);
+    r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.HIGH);
     println("OK");
 
-    // configure p1.6 (build in LED) as digital output, initially set LOW
-    print("Set P1.6 to OUTPUT/LOW: ");
-    r.pinMode(ROCKETuC.PIN_1_6, ROCKETuC.OUTPUT);
-    r.digitalWrite(ROCKETuC.PIN_1_6, ROCKETuC.LOW);
-    println("OK");
     
   }
   catch(Exception e) {
@@ -87,8 +84,7 @@ void draw() {
   try {
     // toggle p1.0 between high/low state (LED on/off)
     print("Toggle P1.0+P1.6: ");
-    r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
-    r.digitalWrite(ROCKETuC.PIN_1_6, ROCKETuC.TOGGLE);
+    r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
     println("OK");
   }
   catch(Exception e) {
@@ -100,5 +96,5 @@ void draw() {
   }
   
   // wait a little 
-  delay(500);
+  delay(200);
 }
