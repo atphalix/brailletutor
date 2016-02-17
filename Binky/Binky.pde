@@ -8,8 +8,8 @@
 /**
  * Braille to pin mapping diagram:
  *PIN_1_0-o o-PIN_1_3
- *PIN_1_1-o o-PIN_1_4
- *PIN_1_2-o o-PIN_1_5
+ *PIN_2_1-o o-PIN_1_4
+ *PIN_2_2-o o-PIN_1_5
  *
  */
 
@@ -28,11 +28,12 @@ void setup() {
     // connect to MCU
     r = new ROCKETuC(this, "/dev/ttyACM0");
     
-    // configure PIN_1_0 to PIN_1_5 as digital output
+    // configure digital output
+    // PIN_1_1 and PIN_1_2 are reserved for serial UART!
 
     r.pinMode(ROCKETuC.PIN_1_0, ROCKETuC.OUTPUT);
-    r.pinMode(ROCKETuC.PIN_1_1, ROCKETuC.OUTPUT);
-    r.pinMode(ROCKETuC.PIN_1_2, ROCKETuC.OUTPUT);
+    r.pinMode(ROCKETuC.PIN_2_1, ROCKETuC.OUTPUT);
+    r.pinMode(ROCKETuC.PIN_2_2, ROCKETuC.OUTPUT);
     r.pinMode(ROCKETuC.PIN_1_3, ROCKETuC.OUTPUT);
     r.pinMode(ROCKETuC.PIN_1_4, ROCKETuC.OUTPUT);
     r.pinMode(ROCKETuC.PIN_1_5, ROCKETuC.OUTPUT);
@@ -52,8 +53,8 @@ void resetKey() {
    try {
     //turn off all pins before displaying letter
     r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.LOW);
-    r.digitalWrite(ROCKETuC.PIN_1_1, ROCKETuC.LOW);
-    r.digitalWrite(ROCKETuC.PIN_1_2, ROCKETuC.LOW);
+    r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.LOW);
+    r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.LOW);
     r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.LOW);
     r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.LOW);
     r.digitalWrite(ROCKETuC.PIN_1_5, ROCKETuC.LOW);
@@ -73,7 +74,7 @@ void vibrateKey(char k) {
      case 'B' :
             // vibrate only pins that need to vibrate :-)
          r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
-         r.digitalWrite(ROCKETuC.PIN_1_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
         // wait a little 
       delay(200);
             break;
