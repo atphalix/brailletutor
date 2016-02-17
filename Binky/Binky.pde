@@ -3,7 +3,6 @@
  *
  * Copyright (C) 2015 Ahmed Mansour <hamada@openmailbox.org>
  * 
- 
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
  *   the Free Software Foundation; either version 3 of the License, or
@@ -80,6 +79,8 @@ void setup() {
 
 void resetKey() {
    try {
+     //wait 1/2 second before displaying another letter
+     delay(500);
     //turn off all pins before displaying letter
     r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.LOW);
     r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.LOW);
@@ -100,6 +101,10 @@ void resetKey() {
 void vibrateKey(char k) {
    try {
    switch (k) {
+     case 'a' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
      case 'b' :
             // vibrate only pins that need to vibrate :-)
          r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
@@ -108,11 +113,240 @@ void vibrateKey(char k) {
       delay(wait);
             break;
      case 'c' :
-          
          r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
          r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
-        
-      delay(wait);
+         delay(wait);
+      break;
+      case 'd' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'e' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'f' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'g' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'h' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'i' :
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'j' :
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'k' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'l' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'm' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'n' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'o' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'p' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'r' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'q' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 's' :
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 't' :
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'u' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_5, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'v' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_5, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'w' :
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_5, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'x' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_5, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'y' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_5, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case 'z' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_5, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case '#' :
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_5, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case '0' :
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case '1' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case '2' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case '3' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case '4' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case '5' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_5, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+      case '6' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+        case '7' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+        case '8' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_4, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+        case '9' :
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_1, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+        case '+' :
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_5, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+        case '_' :
+         r.digitalWrite(ROCKETuC.PIN_1_5, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+        case '*' :
+         r.digitalWrite(ROCKETuC.PIN_1_0, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_5, ROCKETuC.TOGGLE);
+         delay(wait);
+      break;
+        case '/' :
+         r.digitalWrite(ROCKETuC.PIN_2_2, ROCKETuC.TOGGLE);
+         r.digitalWrite(ROCKETuC.PIN_1_3, ROCKETuC.TOGGLE);
+         delay(wait);
       break;
        default : 
        resetKey();
@@ -151,7 +385,7 @@ void draw() {
 void keyPressed() {
   // The variable "key" always contains the value 
   // of the most recent key pressed.
-  if ((key >= 'A' && key <= 'z') || key == ' ') {
+ 
     letter = key;
     vibrateKey(letter);
     //it's weird but you have to rewind a file to play it
@@ -159,7 +393,7 @@ void keyPressed() {
  //   player.play ();
     // Write the letter to the console for debugging
     println(key);
-  }
+  
 }
 
 //stop is called when you hit stop on processing. Just leave this here
